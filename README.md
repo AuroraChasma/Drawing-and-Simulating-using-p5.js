@@ -23,3 +23,7 @@ Open the p5.js web editor and press run
 ### 2.3) c = sin(theta) + cos(theta)i where theta is incremented by 0.1 each loop
 ![julia_set_animation](https://github.com/user-attachments/assets/2846d566-899d-4479-92f9-180908bf90e6)
 
+
+## 3) Barnsley fern
+![Screenshot From 2024-11-18 00-24-14](https://github.com/user-attachments/assets/10b48e0c-aed5-4750-92f7-9119a90812ba)
+
