@@ -31,9 +31,6 @@ function draw()
       let realComponent = map(x, 0, canvasWidth, xmin, xmax); // a
       let imgComponent = map(y, 0, canvasHeight, ymin, ymax); // b
 
-      //c in z_n+1 = z^2 + c
-      let originalRealComponent = realComponent;
-      let originalImgComponent = imgComponent;
 
       let iterationNo = 1;
       while(iterationNo <= maxIterations)
@@ -44,9 +41,9 @@ function draw()
         //Img Part of (a+bi)^2    =              2abi
         let zSquaredImgComponent  = 2 * realComponent * imgComponent;
         
-        //    z_n+1       =        z^2            +     c 
-        realComponent = zSquaredRealComponent + originalRealComponent;
-        imgComponent  = zSquaredImgComponent +  originalImgComponent;
+        //    z_n+1       =        z^2        +   c
+        realComponent = zSquaredRealComponent +  cRe;
+        imgComponent  = zSquaredImgComponent  +  cIm;
 
         //if |z|^2 > 4 or |z| > 2, it is guaranteed that the point is not part of mandelbrot set 
         if(abs(realComponent*realComponent + imgComponent*imgComponent) > 4)
