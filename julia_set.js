@@ -1,15 +1,29 @@
+/* 
+To make a julia set animation:
+1. comment out noLoop();
+2. uncomment angle variable;
+3. uncomment the commented Real and imaginary parts of constant c(cRe and cIm) initialized to the sine and cosine of the angle and comment out the constant values(-0.8 and 0.156)
+4. uncomment the other set of canvas sizes(400 by 400) and comment out the large ones(1920 by 1080)
+
+Note:
+When making the animation, make the canvas size small because animating on a large canva is laggy and slow
+*/
+
 let canvasWidth = 1920;
 let canvasHeight = 1080;
 
-//Julia set parameters
-let cRe = -0.8;
-let cIm = 0.156;
+//uncomment if making a animation
+// let canvasWidth = 400;
+// let canvasHeight = 400;
+// let angle = 0;
+
 
 function setup()
 {
   createCanvas(canvasWidth, canvasHeight);
   pixelDensity(1);
 }
+
 
 function draw()
 {
@@ -20,6 +34,16 @@ function draw()
   let xmax = 2.5;
   let ymin = -2.5;
   let ymax = 2.5;
+
+  //Julia set parameters
+
+  let cRe = -0.8;
+  let cIm = 0.156;
+
+  //uncomment this to produce a juliaset animation
+  // let cRe = sin(angle);
+  // let cIm = cos(angle);
+  // angle += 0.1
 
   let maxIterations = 100;
 
@@ -67,6 +91,6 @@ function draw()
   }
 
   updatePixels();
-  noLoop();
+  noLoop(); //uncomment if making a animation
 }
 
